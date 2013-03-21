@@ -1,11 +1,43 @@
-%a.brand{ :href => '#' } My-Auth
-%ul.nav.pull-left
-  %li
-    %a{ :href => '#' } Como Funciona
-  %li
-    %a{ :href => '#' } Planos
-%ul.nav.pull-right
-  %li
-    %a{ :href => '#' } Entrar
-  %li
-    %a{ :href => '#' } Me cadastrar
+%a.btn.btn-navbar{ 'data-toggle' => 'collapse', 'data-target' => '.nav-collapse' }
+  %span.icon-bar
+  %span.icon-bar
+  %span.icon-bar
+
+%a.brand My-Auth
+
+-if user_signed_in?
+  .nav-collapse
+    %ul.nav.pull-right
+      %li.dropdown
+        %a.dropdown-toggle{ :href => '#', 'data-toggle' => 'dropdown' }
+          %i.icon-wrench
+          %strong.caret
+        .dropdown-menu{ :role => 'menu', 'aria-labelledby' => 'dLabel' }
+          %ul.nav
+            %li
+              = link_to 'Sair', destroy_user_session_path, :method => :delete
+
+-else
+  .nav-collapse
+    %ul.nav
+      %li
+        %a Como funciona
+      %li
+        %a Planos
+
+    %ul.nav.pull-right
+      %li
+        = link_to 'Cadastrar', new_user_path
+      %li.divider-vertical
+      %li.dropdown
+        %a.dropdown-toggle{ :href => '#', 'data-toggle' => 'dropdown' }
+          Entrar
+          %strong.caret
+        .dropdown-menu
+          = form_for('user', :as => User, :url => new_user_session_path) do |f|
+            = f.text_field :email, :placeholder => 'E-mail'
+            = f.password_field :password, :placeholder => 'Senha'
+            %div
+              = f.check_box :remember_me, :style => 'float: left; margin-right: 5px;'
+              = f.label 'Manter-me conectado'
+            = f.submit 'Entrar', :class => 'btn btn-primary', :style => 'width: 100%;'

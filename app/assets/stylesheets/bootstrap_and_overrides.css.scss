@@ -3,3 +3,24 @@
 body { padding-top: 60px; }
 
 @import 'bootstrap-responsive';
+
+.dropdown-menu {
+  padding: 10px;
+  padding-bottom: 0px;
+  #email, #password {
+    margin-bottom: 10px;
+  }
+  #remeber_me {
+    float: left;
+    margin-right: 10px;
+  }
+  .string {
+    display: inline;
+  }
+  #submit {
+    clear: left;
+    width: 100%;
+    height: 32px;
+    font-size: 13px;
+  }
+}
