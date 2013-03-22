@@ -1,0 +1,17 @@
+.text-center#registration
+  %h1{ :style => 'margin-bottom: 15px;' } Entrar
+  - if !devise_error_messages!.empty?
+    .alert.alert-error.text-left
+      %a.close{ 'data-dismiss' => 'alert' }
+        %i.icon-remove
+      = devise_error_messages!
+  = form_for('user', :url => :new_user_session) do |f|
+    .control-group
+      .controls
+        = f.text_field :email, :placeholder => 'E-mail'
+    .control-group
+      .controls
+        = f.password_field :password, :placeholder => 'Senha'
+    .control-group
+      .form-actions
+        = f.submit 'Cadastrar', :class => 'btn btn-primary'

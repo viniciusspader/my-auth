@@ -24,3 +24,4 @@ gem 'haml'
 gem 'devise'
 
 gem 'bootstrap-sass'
+gem 'normalize-rails'
