@@ -1,7 +1,9 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
-    can :read, :all, :id => user.id
+  def initialize(resource)
+    if resource.is_a?(User)
+      can [:read, :edit], User, :id => resource.id
+    end
   end
 end

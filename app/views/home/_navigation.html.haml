@@ -12,10 +12,13 @@
         %a.dropdown-toggle{ :href => '#', 'data-toggle' => 'dropdown' }
           %i.icon-wrench
           %strong.caret
-        .dropdown-menu{ :role => 'menu', 'aria-labelledby' => 'dLabel' }
-          %ul.nav
-            %li
-              = link_to 'Sair', destroy_user_session_path, :method => :delete
+        %ul.dropdown-menu{ :role => 'menu', 'aria-labelledby' => 'dropdownMenu' }
+          %li
+            = link_to 'Meu pefil', edit_user_path, :tabindex => '-1'
+          %li.divider
+          %li
+            = link_to 'Sair', destroy_user_session_path, :method => :delete,
+                                                         :tabindex => '-1'
 
 -else
   .nav-collapse

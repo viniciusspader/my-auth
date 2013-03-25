@@ -5,10 +5,6 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, :alert => exception.message
   end
 
-  def stored_location_for(user)
-
-  end
-
   def after_sign_in_path_for(user)
     current_user
   end

@@ -1,0 +1,22 @@
+.container-fluid
+  .row-fluid
+    .span3
+      .well
+        %ul.nav.nav-pills.nav-stacked
+          %li.nav-header Perfil
+          %li
+            = link_to 'Dados Pessoais',  'users#edit_profile', :remote => true
+          %li
+            = link_to 'Social', '#', :remote => true
+          %li
+            = link_to 'Trocar a Senha', '#', :remote => true
+          %li.divider
+          %li.nav-header Conta
+          %li
+            = link_to 'Deletar Conta', '#'
+
+    %div
+
+    .span9
+      .well
+        #edit-body
