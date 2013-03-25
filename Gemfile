@@ -22,6 +22,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'haml'
 
 gem 'devise'
+gem 'cancan'
 
 gem 'bootstrap-sass'
 gem 'normalize-rails'

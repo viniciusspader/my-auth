@@ -1,2 +1,8 @@
 %p users/show
-%p= current_user.email
+.content
+  %div
+    %h1 Logged user:
+    %h2= current_user.email
+  %div
+    %h1 Page user:
+    %h2= @user.email

@@ -3,7 +3,7 @@
   %span.icon-bar
   %span.icon-bar
 
-%a.brand My-Auth
+%a.brand{ :href => root_path } My-Auth
 
 -if user_signed_in?
   .nav-collapse
@@ -21,9 +21,9 @@
   .nav-collapse
     %ul.nav
       %li
-        %a Como funciona
+        %a Seção 1
       %li
-        %a Planos
+        %a Seção 2
 
     %ul.nav.pull-right
       %li
