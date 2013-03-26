@@ -20,6 +20,15 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+  end
+
+  def settings
+    @user = User.find(params[:id])
+    respond_to do |format|
+      format.html { render partial: 'settings'}
+      format.js { render partial: 'settings'}
+    end
   end
 
 end

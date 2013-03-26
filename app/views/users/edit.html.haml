@@ -5,18 +5,17 @@
         %ul.nav.nav-pills.nav-stacked
           %li.nav-header Perfil
           %li
-            = link_to 'Dados Pessoais',  'users#edit_profile', :remote => true
+            = link_to 'Dados Pessoais', '/settings', :remote => true
           %li
-            = link_to 'Social', '#', :remote => true
+            = link_to 'Social',         :remote => true
           %li
-            = link_to 'Trocar a Senha', '#', :remote => true
-          %li.divider
+            = link_to 'Trocar a Senha', :remote => true
           %li.nav-header Conta
           %li
-            = link_to 'Deletar Conta', '#'
+            = link_to 'Deletar Conta',  :remote => true
 
     %div
 
     .span9
       .well
-        #edit-body
+        #edit_body
