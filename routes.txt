@@ -26,3 +26,4 @@ cancel_user_registration GET    /cancel(.:format)            devise/registration
                  session GET    /sessions/:id(.:format)      sessions#show
                          PUT    /sessions/:id(.:format)      sessions#update
                          DELETE /sessions/:id(.:format)      sessions#destroy
+                         

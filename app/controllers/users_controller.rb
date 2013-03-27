@@ -16,9 +16,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def index
-  end
-
   def edit
     @user = User.find(params[:id])
   end
@@ -26,8 +23,7 @@ class UsersController < ApplicationController
   def settings
     @user = User.find(params[:id])
     respond_to do |format|
-      format.html { render partial: 'settings'}
-      format.js { render partial: 'settings'}
+      format.js { render layout: 'settings'}
     end
   end
 

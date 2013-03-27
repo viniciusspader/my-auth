@@ -1,8 +1,5 @@
-%p users/show
 .content
-  %div
-    %h1 Logged user:
-    %h2= current_user.email
-  %div
-    %h1 Page user:
-    %h2= @user.email
+  .well
+    %h3 Logged user
+    %h4= "ID: #{current_user.id}"
+    %p= "Email: #{current_user.email}"

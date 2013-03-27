@@ -3,9 +3,8 @@
   %span.icon-bar
   %span.icon-bar
 
-%a.brand{ :href => root_path } My-Auth
-
 -if user_signed_in?
+  %a.brand{ :href => user_path(current_user.id) } My-Auth
   .nav-collapse
     %ul.nav.pull-right
       %li.dropdown
@@ -14,13 +13,14 @@
           %strong.caret
         %ul.dropdown-menu{ :role => 'menu', 'aria-labelledby' => 'dropdownMenu' }
           %li
-            = link_to 'Meu pefil', edit_user_path, :tabindex => '-1'
+            = link_to 'Meu pefil', edit_user_path(current_user.id), :tabindex => '-1'
           %li.divider
           %li
             = link_to 'Sair', destroy_user_session_path, :method => :delete,
                                                          :tabindex => '-1'
 
 -else
+  %a.brand{ :href => root_path } My-Auth
   .nav-collapse
     %ul.nav
       %li
