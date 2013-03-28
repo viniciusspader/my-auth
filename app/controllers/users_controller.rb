@@ -20,10 +20,24 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      sign_in(@user, :bypass => true)
+      respond_to do |format|
+        format.js { render 'update_response', :layout => false, :locals = { :some => 'Feito' } }
+      end
+    else
+      respond_to do |format|
+        format.js { render 'update_response', :layout => false, :locals = { :some => 'Nops' } }
+      end
+    end
+  end
+
   def settings
     @user = User.find(params[:id])
     respond_to do |format|
-      format.js
+      format.js { render 'settings', :locals => { :from => params[:from] } }
     end
   end
 
