@@ -3,7 +3,8 @@ class Ability
 
   def initialize(resource)
     if resource.is_a?(User)
-      can [:read, :edit], User, :id => resource.id
+      alias_action :edit, :settings, :to => :modify
+      can [:read, :modify], User, :id => resource.id
     end
   end
 end

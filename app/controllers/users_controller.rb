@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def settings
     @user = User.find(params[:id])
     respond_to do |format|
-      format.js { render layout: 'settings'}
+      format.js
     end
   end
 
