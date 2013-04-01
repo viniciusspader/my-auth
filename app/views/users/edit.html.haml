@@ -1,4 +1,6 @@
 .container#update_response
+  .alert.hide
+    %a.close{ 'data-dismiss' => 'alert' } x
   
 .container-fluid
   .row-fluid
@@ -7,14 +9,14 @@
         %ul.nav.nav-pills.nav-stacked
           %li.nav-header Perfil
           %li
-            = link_to 'Dados Pessoais', 'settings?from=profile',     remote: true
+            = link_to 'Dados Pessoais', 'settings?from=profile',  remote: true
           %li
-            = link_to 'Social', 'settings?from=social',              remote: true
+            = link_to 'Social', 'settings?from=social',           remote: true
           %li
-            = link_to 'Trocar a Senha', 'settings?from=password',    remote: true
+            = link_to 'Trocar a Senha', 'settings?from=password', remote: true
           %li.nav-header Conta
           %li
-            = link_to 'Deletar Conta', 'settings?from=destroy_user', remote: true
+            = link_to 'Deletar Conta', 'settings?from=delete',    remote: true
 
     %div
 

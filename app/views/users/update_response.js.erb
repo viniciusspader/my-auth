@@ -1,1 +1,15 @@
-alert(some);
+$('#update_response .alert').empty();
+$('#update_response .alert').append("<a class='close' data-dismiss='alert'>x</a>");
+
+<% if @user.errors.any? %>
+  $('#update_response .alert').addClass('alert-error')
+  <% @user.errors.each do |key, msg| %>
+    $('#update_response .alert').append('<div><%= "#{key} #{msg}".humanize %></div>');
+  <% end %>
+<% else %>
+  $('#update_response .alert').removeClass('alert-error');
+  $('#update_response .alert').addClass('alert-success');
+  $('#update_response .alert').append('<div>Changes saved!</div>').fadeOut(1500);
+<% end %>
+
+$('#update_response .alert').removeClass('hide');

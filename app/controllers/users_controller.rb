@@ -24,13 +24,9 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update_attributes(params[:user])
       sign_in(@user, :bypass => true)
-      respond_to do |format|
-        format.js { render 'update_response', :layout => false, :locals = { :some => 'Feito' } }
-      end
-    else
-      respond_to do |format|
-        format.js { render 'update_response', :layout => false, :locals = { :some => 'Nops' } }
-      end
+    end
+    respond_to do |format|
+      format.js { render 'update_response', :layout => false }
     end
   end
 
