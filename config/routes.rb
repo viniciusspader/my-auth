@@ -1,7 +1,10 @@
 MyAuth::Application.routes.draw do
 
-  devise_for :users, :path => '', :path_names => { :sign_in => 'entrar',
-                                                   :sign_up => 'cadastro' }
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  devise_for :users
 
   root :to => 'home#index'
 
