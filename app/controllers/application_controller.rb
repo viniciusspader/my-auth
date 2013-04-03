@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :authenticate_user!, :except => :index
+
   rescue_from CanCan::AccessDenied do |exception|
     if current_user.is_a?(User)
       redirect_to current_user, :alert => exception.message

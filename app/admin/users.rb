@@ -24,7 +24,7 @@ ActiveAdmin.register User do
 
   filter :id
   filter :email
-  filter :role, :as => :check_boxes, :collection => proc { User.all }
+  filter :role, :as => :select, :collection => proc { User.all.map(&:role).uniq }
 
   show :title => :email do
     panel "User" do

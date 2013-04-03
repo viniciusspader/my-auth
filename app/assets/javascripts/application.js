@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree .
+//= require_directory .
 
 // Prevent twitter bootstrap to close the dropdown
 // menu when inner form is clicked

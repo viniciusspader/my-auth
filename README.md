@@ -35,6 +35,10 @@ their information.
 + **[ActiveAdmin] [5]**: I'm using ActiveAdmin for the management of all resources. 
 It has pre-built views and methods and saved me a lot of time.
 
++ **[morris.js] [6]**: This was the best solution to generate simple charts that I 
+found. I'm using it currently for the ActiveAdmin session, because that is no need 
+of it in this app.
+
 ## Help Me
 
 As I said before, I'm new to this framework and this app is very succectible to 
@@ -50,3 +54,4 @@ Many thanks!
 [3]: https://github.com/ryanb/cancan "CanCan"
 [4]: twitter.github.com/bootstrap/ "Bootstrap"
 [5]: https://github.com/gregbell/active_admin "ActiveAdmin"
+[6]: http://www.oesmith.co.uk/morris.js "morris.js"

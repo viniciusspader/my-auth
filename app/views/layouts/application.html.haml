@@ -8,6 +8,12 @@
     %meta{:content => "", :name => "author"}
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag 'application'
+
+    / This is needed for Morris.js (chart solution)
+    /= stylesheet_link_tag "http://cdn.oesmith.co.uk/morris-0.4.1.min.css"
+    /= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"
+    /= javascript_include_tag "http://cdn.oesmith.co.uk/morris-0.4.1.min.js"
+
     = csrf_meta_tags
     = yield(:head)
   %body

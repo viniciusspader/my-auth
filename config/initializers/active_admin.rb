@@ -149,4 +149,15 @@ ActiveAdmin.setup do |config|
   #
   # Set the CSV builder options (default is {})
   # config.csv_options = {}
+
+  config.clear_stylesheets!
+  config.register_stylesheet 'admin/active_admin.css'
+  # This one is used for morris.js
+  config.register_stylesheet 'http://cdn.oesmith.co.uk/morris-0.4.1.min.css'
+
+  config.clear_javascripts!
+  config.register_javascript 'admin/active_admin.js'
+  # Those are used for morris.js
+  config.register_javascript '//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js'
+  config.register_javascript 'http://cdn.oesmith.co.uk/morris-0.4.1.min.js'
 end
