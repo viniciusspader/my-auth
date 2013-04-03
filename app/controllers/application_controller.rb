@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
       admin_dashboard_path(resource_or_scope)
     end
   end
+
+  def current_ability
+    @current_ability ||= Ability.new(current_admin_user)
+  end
 end
