@@ -1,5 +1,8 @@
 ActiveAdmin.register User do
 
+  menu :if => proc{ can?(:manage, User) }
+  controller.authorize_resource
+
   config.sort_order = "id_asc"
 
   index do

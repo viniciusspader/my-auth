@@ -1,4 +1,8 @@
 ActiveAdmin.register AdminUser do     
+
+  menu :if => proc{ can?(:manage, AdminUser) }
+  controller.authorize_resource
+
   index do                            
     column :email                     
     column :current_sign_in_at        
