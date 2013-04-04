@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :authenticate_user!, :except => :index
+  load_and_authorize_resource
 
   rescue_from CanCan::AccessDenied do |exception|
     if current_user.is_a?(User)
