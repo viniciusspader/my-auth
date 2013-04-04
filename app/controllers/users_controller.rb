@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
   end
 
   def edit
@@ -34,5 +35,6 @@ class UsersController < ApplicationController
       format.js { render 'settings', :locals => { :from => params[:from] } }
     end
   end
+
 
 end
