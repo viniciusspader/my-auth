@@ -7,7 +7,6 @@ ActiveAdmin.register User do
     column :email do |user|
       link_to user.email, admin_user_path(user)
     end
-    column :role
 
     column :actions do |resource|
       links = ''.html_safe
@@ -24,7 +23,6 @@ ActiveAdmin.register User do
 
   filter :id
   filter :email
-  filter :role, :as => :select, :collection => proc { User.all.map(&:role).uniq }
 
   show :title => :email do
     panel "User" do

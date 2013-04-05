@@ -1,12 +1,13 @@
 .content
   .well
-    %h3 Logged user
+    %h3 Logged user (current_user)
     %h4= "ID: #{current_user.id}"
     %p= "Email: #{current_user.email}"
     %p= "User? #{resource.is_a?(User)}"    %p= @users_count
     %p= "AdminUser? #{resource.is_a?(AdminUser)}"
     %p= "Can read @user? #{can? :read, @user}"
-    %p= "Can read current_ser? #{can? :read, current_user}"
-    %h3 Page User
+    %p= "Can read current_user? #{can? :read, current_user}"
+    %h3 Page User (@user)
     %h4= "ID: #{@user.id}"
     %p= "Email: #{@user.email}"
+
