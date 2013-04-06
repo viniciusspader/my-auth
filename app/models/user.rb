@@ -13,8 +13,8 @@ class User < ActiveRecord::Base
 
   attr_accessor :current_password
 
-  def is_admin?
-    self.is_a?(AdminUser)
+  def admin?
+    false
   end
 
 end

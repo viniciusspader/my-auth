@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     if current_user.is_a?(User)
-      redirect_to root_path, :alert => exception.message
+      redirect_to current_user, :alert => exception.message
     elsif current_user.is_a?(AdminUser)
       redirect_to admin_dashboard_path(current_admin_user), :alert => exception.message
     end
@@ -33,10 +33,7 @@ class ApplicationController < ActionController::Base
   private
 
     def current_ability
-      controller_name_segments = params[:controller].split('/')
-      controller_name_segments.pop
-      controller_namespace = controller_name_segments.join('/').camelize
-      Ability.new(current_user, controller_namespace)
+      Ability.new(current_user)
     end
 
 end

@@ -1,16 +1,15 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user, controller_namespace)
+  def initialize(user)
 
-    case controller_namespace
-      when 'Admin'
-        can :manage, :all
-      when  'User'
-        alias_action :edit, :settings, :to => :modify
-        can [:read, :update, :modify], :id => user.id
-      else
-        # pass
+    user ||= AdminUser.new
+
+    if user.admin?
+      can :manage, :all
+    else
+      alias_action :edit, :settings, :to => :modify
+      can [:read, :update, :modify], User, id: user.id
     end
 
   end
