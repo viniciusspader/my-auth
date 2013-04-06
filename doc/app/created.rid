@@ -1,0 +1,16 @@
+Sat, 06 Apr 2013 15:59:29 -0300
+doc/README_FOR_APP	Sat, 06 Apr 2013 14:55:19 -0300
+app/admin/admin_user.rb	Sat, 06 Apr 2013 15:57:46 -0300
+app/admin/dashboard.rb	Sat, 06 Apr 2013 15:57:46 -0300
+app/admin/users.rb	Sat, 06 Apr 2013 15:57:46 -0300
+app/controllers/application_controller.rb	Sat, 06 Apr 2013 15:57:46 -0300
+app/controllers/home_controller.rb	Sat, 06 Apr 2013 14:55:19 -0300
+app/controllers/sessions_controller.rb	Sat, 06 Apr 2013 14:55:19 -0300
+app/controllers/users_controller.rb	Sat, 06 Apr 2013 15:57:46 -0300
+app/helpers/application_helper.rb	Sat, 06 Apr 2013 14:55:19 -0300
+app/helpers/home_helper.rb	Sat, 06 Apr 2013 14:55:19 -0300
+app/helpers/sessions_helper.rb	Sat, 06 Apr 2013 15:57:46 -0300
+app/helpers/users_helper.rb	Sat, 06 Apr 2013 14:55:19 -0300
+app/models/ability.rb	Sat, 06 Apr 2013 15:57:46 -0300
+app/models/admin_user.rb	Sat, 06 Apr 2013 15:57:46 -0300
+app/models/user.rb	Sat, 06 Apr 2013 15:57:46 -0300
