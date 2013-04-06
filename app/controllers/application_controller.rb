@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     if current_user.is_a?(User)
-      redirect_to current_user, :alert => exception.message
+      redirect_to current_admin_user, :alert => exception.message
     elsif current_user.is_a?(AdminUser)
       redirect_to admin_dashboard_path(current_admin_user), :alert => exception.message
     end

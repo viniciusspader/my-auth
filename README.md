@@ -39,12 +39,13 @@ It has pre-built views and methods and saved me a lot of time.
 found. I'm using it currently for the ActiveAdmin session, because that is no need 
 of it in this app.
 
+**Documentation  
+The Rdocs are [here] [7]
+
 ## Help Me
 
 As I said before, I'm new to this framework and this app is very succectible to 
-security flaws, once I made use of lots of gems to do the hard work for me. Even if 
-this gems are widely used by experienced programmers, this lack of security can happen
-because my configurations.  
+security flaws, once I made use of lots of gems to do the hard work for me.  
 That said, please send me suggestions on how to improve my app and my coding style.  
   
 Many thanks!
@@ -55,3 +56,4 @@ Many thanks!
 [4]: twitter.github.com/bootstrap/ "Bootstrap"
 [5]: https://github.com/gregbell/active_admin "ActiveAdmin"
 [6]: http://www.oesmith.co.uk/morris.js "morris.js"
+[7]: http://rubydoc.info/github/viniciusspader/my-auth/master/frames "Rdocs"
