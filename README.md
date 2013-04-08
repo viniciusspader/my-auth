@@ -39,7 +39,7 @@ It has pre-built views and methods and saved me a lot of time.
 found. I'm using it currently for the ActiveAdmin session, because that is no need 
 of it in this app.
 
-**Documentation  
+**RDocs**  
 The Rdocs are [here] [7]
 
 ## Help Me
