@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
   attr_accessor :current_password
 
+  validates_presence_of :password_confirmation
+
   def admin?
     false
   end

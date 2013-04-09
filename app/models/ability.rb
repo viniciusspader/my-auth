@@ -9,7 +9,7 @@ class Ability
       can :manage, :all
     else
       alias_action :edit, :settings, :to => :modify
-      can [:read, :update, :modify], User, id: user.id
+      can [:read, :update, :modify, :destroy], User, id: user.id
     end
 
   end
