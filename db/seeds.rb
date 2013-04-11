@@ -11,7 +11,3 @@ users = User.create([
   { email: 'user2@example.com', password: 12345678, password_confirmation: 12345678 },
   { email: 'user3@example.com', password: 12345678, password_confirmation: 12345678 }
   ])
-
-admins = AdminUser.create([
-  { email: 'admin@example.com', password: 123456789 }
-  ])

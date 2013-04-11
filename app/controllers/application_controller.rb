@@ -2,10 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   rescue_from CanCan::AccessDenied do |exception|
-    if current_user.admin?
+    if !current_user.admin?
       redirect_to current_user, :alert => exception.message
     elsif current_user.admin?
-      redirect_to admin_dashboard_path(current_admin_user), :alert => exception.message
+      redirect_to root_path, :alert => exception.message
     end
   end
 
@@ -16,19 +16,6 @@ class ApplicationController < ActionController::Base
       admin_dashboard_path(resource_or_scope)
     end
   end
-
-  # This block code is from StackOverflow
-  # http://stackoverflow.com/questions/9253587/merging-activeadmin-users-with-existing-user-model
-  # and is intended to work with ActiveAdmin and Devise in the authentication process
-  #def authenticate_admin_user!
-  #  redirect_to root_path and return if user_signed_in? && !current_user.is_admin?
-  #  before_filter :authenticate_user!, :except => :index
-  #end
-  #def current_admin_user
-  #  return nil if user_signed_in? && !current_user.is_admin?
-  #  current_user
-  #end
-
 
   private
 

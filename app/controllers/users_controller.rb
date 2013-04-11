@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
+
     if @user.update_attributes(params[:user])
       sign_in(@user, :bypass => true)
     end
@@ -35,5 +36,6 @@ class UsersController < ApplicationController
       format.js { render 'settings', :locals => { :from => params[:from] } }
     end
   end
+
 
 end

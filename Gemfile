@@ -39,4 +39,4 @@ gem 'cancan'
 gem 'bootstrap-sass'
 gem 'normalize-rails'
 
-gem 'activeadmin'
+gem 'rails_admin'
