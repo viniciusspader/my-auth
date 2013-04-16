@@ -40,3 +40,5 @@ gem 'bootstrap-sass'
 gem 'normalize-rails'
 
 gem 'rails_admin'
+
+gem 'piggybak'
