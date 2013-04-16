@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   # attr_accessible :title, :body
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :reset_password_token, :current_password, :roles_mask
+                  :reset_password_token, :current_password, :roles_mask, :roles
 
   attr_accessor :current_password
 
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   ROLES = %w[guest user admin]
 
   def role?(base_role)
-    ROLES.index(base_role.to_s) <= ROLES.index(role)
+    ROLES.index(base_role.to_s) <= ROLES.index(roles)
   end
 
   def roles=(roles)

@@ -3,44 +3,46 @@
   %span.icon-bar
   %span.icon-bar
 
+%a.brand{ :href =>"#{ user_signed_in? ? user_path(current_user.id) : root_path}" } My-Auth
+.nav-collapse
+
 -if user_signed_in?
-  %a.brand{ :href => user_path(current_user.id) } My-Auth
-  .nav-collapse
-    %ul.nav.pull-right
-      %li.dropdown
-        %a.dropdown-toggle{ :href => '#', 'data-toggle' => 'dropdown' }
-          %i.icon-wrench
-          %strong.caret
-        %ul.dropdown-menu{ :role => 'menu', 'aria-labelledby' => 'dropdownMenu' }
+  %ul.nav.pull-right
+    %li.dropdown
+      %a.dropdown-toggle{ :href => '#', 'data-toggle' => 'dropdown' }
+        %i.icon-wrench
+        %strong.caret
+      %ul.dropdown-menu{ :role => 'menu', 'aria-labelledby' => 'dropdownMenu' }
+        %li
+          = link_to 'Meu pefil', edit_user_path(current_user.id), :tabindex => '-1'
+        -if current_user.admin?
           %li
-            = link_to 'Meu pefil', edit_user_path(current_user.id), :tabindex => '-1'
-          %li.divider
-          %li
-            = link_to 'Sair', destroy_user_session_path, :method => :delete,
-                                                         :tabindex => '-1'
+            = link_to 'Admin', rails_admin_path, :tabindex => '-1'
+        %li.divider
+        %li
+          = link_to 'Sair', destroy_user_session_path, :method => :delete,
+                                                       :tabindex => '-1'
 
 -else
-  %a.brand{ :href => root_path } My-Auth
-  .nav-collapse
-    %ul.nav
-      %li
-        %a Seção 1
-      %li
-        %a Seção 2
+  %ul.nav
+    %li
+      %a Seção 1
+    %li
+      %a Seção 2
 
-    %ul.nav.pull-right
-      %li
-        = link_to 'Cadastrar', new_user_registration_path
-      %li.divider-vertical
-      %li.dropdown
-        %a.dropdown-toggle{ :href => '#', 'data-toggle' => 'dropdown' }
-          Entrar
-          %strong.caret
-        .dropdown-menu
-          = form_for('user', :as => User, :url => new_user_session_path) do |f|
-            = f.text_field :email, :placeholder => 'E-mail'
-            = f.password_field :password, :placeholder => 'Senha'
-            %div
-              = f.check_box :remember_me, :style => 'float: left; margin-right: 5px;'
-              = f.label 'Manter-me conectado'
-            = f.submit 'Entrar', :class => 'btn btn-primary', :style => 'width: 100%;'
+  %ul.nav.pull-right
+    %li
+      = link_to 'Cadastrar', new_user_registration_path
+    %li.divider-vertical
+    %li.dropdown
+      %a.dropdown-toggle{ :href => '#', 'data-toggle' => 'dropdown' }
+        Entrar
+        %strong.caret
+      .dropdown-menu
+        = form_for('user', :as => User, :url => new_user_session_path) do |f|
+          = f.text_field :email, :placeholder => 'E-mail'
+          = f.password_field :password, :placeholder => 'Senha'
+          %div
+            = f.check_box :remember_me, :style => 'float: left; margin-right: 5px;'
+            = f.label 'Manter-me conectado'
+          = f.submit 'Entrar', :class => 'btn btn-primary', :style => 'width: 100%;'
