@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416192746) do
+ActiveRecord::Schema.define(:version => 20130418134621) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname",  :null => false
@@ -102,6 +102,14 @@ ActiveRecord::Schema.define(:version => 20130416192746) do
     t.string   "masked_number"
     t.integer  "line_item_id"
   end
+
+  create_table "products", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "name"
+  end
+
+  add_index "products", ["id"], :name => "index_products_on_id", :unique => true
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"

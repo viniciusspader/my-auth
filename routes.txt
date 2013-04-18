@@ -1,4 +1,5 @@
 [RailsAdmin] RailsAdmin initialization disabled by default. Pass SKIP_RAILS_ADMIN_INITIALIZER=false if you need it.
+                piggybak        /checkout                      Piggybak::Engine
              rails_admin        /admin                         RailsAdmin::Engine
         new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
             user_session POST   /users/sign_in(.:format)       devise/sessions#create
@@ -14,7 +15,6 @@ cancel_user_registration GET    /users/cancel(.:format)        devise/registrati
                          PUT    /users(.:format)               devise/registrations#update
                          DELETE /users(.:format)               devise/registrations#destroy
                     root        /                              home#index
-                                /users/:id/settings(.:format)  users#settings
                    users GET    /users(.:format)               users#index
                          POST   /users(.:format)               users#create
                 new_user GET    /users/new(.:format)           users#new
@@ -29,6 +29,29 @@ cancel_user_registration GET    /users/cancel(.:format)        devise/registrati
                  session GET    /sessions/:id(.:format)        sessions#show
                          PUT    /sessions/:id(.:format)        sessions#update
                          DELETE /sessions/:id(.:format)        sessions#destroy
+                products GET    /products(.:format)            products#index
+                         POST   /products(.:format)            products#create
+             new_product GET    /products/new(.:format)        products#new
+            edit_product GET    /products/:id/edit(.:format)   products#edit
+                 product GET    /products/:id(.:format)        products#show
+                         PUT    /products/:id(.:format)        products#update
+                         DELETE /products/:id(.:format)        products#destroy
+                                /users/:id/settings(.:format)  users#settings
+
+Routes for Piggybak::Engine:
+           cart          /cart(.:format)                      piggybak/cart#show
+       cart_add POST     /cart/add(.:format)                  piggybak/cart#add
+    cart_update POST     /cart/update(.:format)               piggybak/cart#update
+    remove_item DELETE   /cart/remove/:item(.:format)         piggybak/cart#remove
+         orders GET|POST /                                    piggybak/orders#submit
+        receipt          /receipt(.:format)                   piggybak/orders#receipt
+orders_shipping          /orders/shipping(.:format)           piggybak/orders#shipping
+     orders_tax          /orders/tax(.:format)                piggybak/orders#tax
+ orders_geodata          /orders/geodata(.:format)            piggybak/orders#geodata
+    orders_list          /orders(.:format)                    piggybak/orders#list
+    email_order          /admin/orders/:id/email(.:format)    piggybak/orders#email
+ download_order          /admin/orders/:id/download(.:format) piggybak/orders#download {:format=>"txt"}
+   cancel_order          /admin/orders/:id/cancel(.:format)   piggybak/orders#cancel
 
 Routes for RailsAdmin::Engine:
     dashboard GET         /                                      rails_admin/main#dashboard

@@ -7,6 +7,14 @@
 .nav-collapse
 
 -if user_signed_in?
+  %ul.nav
+    %li
+      %a{ href: products_path } Loja
+    %li
+      %a{ href: "#{cart_link}" } Carrinho
+    %li
+      %a{ href: piggybak_path } Checkout
+
   %ul.nav.pull-right
     %li.dropdown
       %a.dropdown-toggle{ :href => '#', 'data-toggle' => 'dropdown' }

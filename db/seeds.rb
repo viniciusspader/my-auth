@@ -11,9 +11,7 @@ users = User.create([
                                 password_confirmation: 12345678,
                                 roles_mask: 6 },
   { email: 'user2@example.com', password: 12345678,
-                                password_confirmation: 12345678,
-                                roles_mask: 2 },
+                                password_confirmation: 12345678 },
   { email: 'user3@example.com', password: 12345678,
-                                password_confirmation: 12345678,
-                                roles_mask: 2 }
+                                password_confirmation: 12345678 }
   ])
