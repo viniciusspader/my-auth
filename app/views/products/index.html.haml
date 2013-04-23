@@ -1,2 +1,8 @@
-- @products.each do |product|
-  %div= cart_form(product)
+.hero-unit
+  .content
+    %ul{ style: "list-style: none; display: inline;" }
+      - @products.each do |product|
+        %li
+          %a{ href: product_path(product.id) }= product.name
+        %li{ style: 'display: inline;' }
+          = cart_form(product)

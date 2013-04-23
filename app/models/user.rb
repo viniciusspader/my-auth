@@ -42,4 +42,34 @@ class User < ActiveRecord::Base
       end
     end
 
+  public
+
+    rails_admin do
+      label do
+        'Usuarios'
+      end
+
+      list do
+        sort_by :sign_in_count
+
+        field :id
+        field :email do
+          label 'E-mail'
+        end
+        field :sign_in_count do
+          label '# Acessos'
+          sort_reverse true
+        end
+        field :admin? do
+          label 'Administrador?'
+          pretty_value do
+            value ? 'Sim' : "Nao"
+          end
+        end
+        field :created_at do
+          label 'Criado em'
+        end
+      end
+    end
+
 end

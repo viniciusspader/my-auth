@@ -42,3 +42,5 @@ gem 'normalize-rails'
 gem 'rails_admin'
 
 gem 'piggybak'
+
+gem 'pg'

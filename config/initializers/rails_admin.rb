@@ -16,4 +16,27 @@ RailsAdmin.config do |config|
 
   config.authorize_with :cancan
 
+  config.model Piggybak::State do
+    label 'Estados'
+    field :name do
+      label 'Nome'
+    end
+    field :abbr do
+      label 'Sigla'
+    end
+    field :country do
+      label 'Pais'
+    end
+  end
+
+  config.model Piggybak::Country do
+    label 'Paises'
+    field :name do
+      label 'Nome'
+    end
+    field :abbr do
+      label 'Sigla'
+    end
+  end
+
 end
