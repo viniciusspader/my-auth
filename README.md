@@ -32,8 +32,14 @@ the home page of the app.
 configuration. It only allows the User to see his pages and allows User to update
 their information.
 
-+ **[ActiveAdmin] [5]**: I'm using ActiveAdmin for the management of all resources. 
-It has pre-built views and methods and saved me a lot of time.
++ **[RailsAdmin] [5]**: I'm using RailsAdmin for the management of all resources. 
+It has pre-built views and methods and saved me a lot of time. I chosed Rails Admin 
+because Piggybak is built on top of it
+
++ **[Piggybak] [8]**: I chose Piggybak before read some comments on StackOverflow. 
+Not sure yet if it is the best option. I prefer it over Spree because I wanted 
+something cleaner. One downside of it is the lack of documentation and that it's 
+not ready for bootstrap!
 
 + **[morris.js] [6]**: This was the best solution to generate simple charts that I 
 found. I'm using it currently for the ActiveAdmin session, because that is no need 
@@ -54,6 +60,7 @@ Many thanks!
 [2]: https://github.com/plataformatec/devise "Devise"
 [3]: https://github.com/ryanb/cancan "CanCan"
 [4]: twitter.github.com/bootstrap/ "Bootstrap"
-[5]: https://github.com/gregbell/active_admin "ActiveAdmin"
+[5]: https://github.com/sferik/rails_admin "RailsAdmin"
 [6]: http://www.oesmith.co.uk/morris.js "morris.js"
 [7]: http://rubydoc.info/github/viniciusspader/my-auth/master/frames "Rdocs"
+[8]: http://www.piggybak.org/ "Piggybak"
