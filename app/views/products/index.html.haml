@@ -1,8 +1,13 @@
 .hero-unit
   .content
-    %ul{ style: "list-style: none; display: inline;" }
+    %ul{ style: "list-style: none;" }
       - @products.each do |product|
         %li
-          %a{ href: product_path(product.id) }= product.name
-        %li{ style: 'display: inline;' }
-          = cart_form(product)
+          = form_tag piggybak.cart_add_url, html: { class: 'form-inline' } do
+            %h4{ style: 'display: inline;' } 
+              %a{ href: product_path(product.id) }= product.name
+            = hidden_field_tag :sellable_id, product.id
+            = hidden_field_tag :quantity, 1
+            %button.btn.btn-info
+              %p{ style: 'font-weight: bold; display: inline;' } +
+              %i.icon-shopping-cart.icon-white
