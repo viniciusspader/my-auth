@@ -43,4 +43,6 @@ gem 'rails_admin'
 
 gem 'piggybak'
 
-gem 'pg'
+group :production do
+  gem 'pg'
+end
