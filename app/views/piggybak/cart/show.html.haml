@@ -2,9 +2,9 @@
   %h1 Carrinho
   - if @cart.errors.any?
     .alert.alert-error.text-left
-    %a.close{ 'data-dismiss' => 'alert' }
-      %i.icon-remove
-    = raw @cart.errors.join
+      %a.close{ 'data-dismiss' => 'alert' }
+        %i.icon-remove
+      = raw @cart.errors.join
 
   -if @cart.sellables.any?
     .cart_items
