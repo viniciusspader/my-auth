@@ -12,11 +12,18 @@ is still not working
 Im using a very basic configuration that can allow the app to be flexible
 for future projects. I'm using some premisses and tools as follow:
 
-+ **User model**: This app has only one model (not quite right) that is called User.
-This model has no additional attributes, just the ones created by Devise.
++ **User model**: This app has an User model for manage users. This model has 
+no additional attributes, just the ones created by Devise.
 
 + **User pages**: That is only a home page for the user - nothing on it - and a 
 settings page where the user is able to change his password.
+
++ **E-commerce**: I'm building a e-commerce solution on top of Piggybak, assuming 
+all my future projects will have an e-commerce solution that enables my clients 
+to create a new income source from the internet.
+
++ **Blog** *(not working)*: My base app have a blog too so the client can build a 
+reputation and boost the sales of the e-commerce solution.
 
 + **[HAML] [1]**: I'm using HAML (HTML Abrstraction Markup Language) for the views. 
 I think HAML is awesome and it has increased my productivity!
@@ -34,7 +41,7 @@ their information.
 
 + **[RailsAdmin] [5]**: I'm using RailsAdmin for the management of all resources. 
 It has pre-built views and methods and saved me a lot of time. I chosed Rails Admin 
-because Piggybak is built on top of it
+because Piggybak is built on top of it.
 
 + **[Piggybak] [8]**: I chose Piggybak before read some comments on StackOverflow. 
 Not sure yet if it is the best option. I prefer it over Spree because I wanted 
