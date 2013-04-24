@@ -1,5 +1,5 @@
 [RailsAdmin] RailsAdmin initialization disabled by default. Pass SKIP_RAILS_ADMIN_INITIALIZER=false if you need it.
-                piggybak        /checkout                      Piggybak::Engine
+                piggybak        /                              Piggybak::Engine
              rails_admin        /admin                         RailsAdmin::Engine
         new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
             user_session POST   /users/sign_in(.:format)       devise/sessions#create

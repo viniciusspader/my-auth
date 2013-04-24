@@ -15,6 +15,11 @@ group :test do
   gem 'launchy'
 end
 
+group :production do
+  gem 'pg'
+  gem 'activerecord-postgresql-adapter'
+end
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -40,9 +45,3 @@ gem 'normalize-rails'
 gem 'rails_admin'
 
 gem 'piggybak'
-
-group :production do
-  gem 'pg'
-end
-
-gem 'activerecord-postgresql-adapter'

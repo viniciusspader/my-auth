@@ -1,0 +1,27 @@
+.cart_items
+= form_tag piggybak.cart_update_url do
+  .container
+    %table.table.table-striped.table-hover
+      %tr.thead
+        %th#item_col Item
+        %th#qt_col Quantidade
+        %th#price_col Preco
+        %th#subtotal_col Subtotal
+        %th
+      - @cart.sellables.each do |item|
+        %tr.tbody
+          %td= item[:sellable].description
+          %td= number_field_tag "quantity[#{item[:sellable].id}]", item[:quantity]
+          %td= number_to_currency item[:sellable].price
+          %td= number_to_currency item[:sellable].price*item[:quantity]
+          %td= link_to "Remover", piggybak.remove_item_url(item[:sellable].id), :method => :delete
+      %tr
+        %td
+        %td
+          %input.btn.btn-info{ type: 'submit', value: 'Atualizar carrinho'}
+        %td{ style: 'font-weight: bold;' } Total
+        %td{ style: 'font-weight: bold;' }= number_to_currency @cart.total
+        %td
+          %a.btn.btn-success{ href: piggybak_path, style: 'float: right;' } Finalizar compra
+      
+      

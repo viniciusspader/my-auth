@@ -10,7 +10,11 @@
   %ul.nav
     %li
       %a{ href: products_path } Loja
-    %li= cart_link
+    -if cart_empty?
+      %li
+        %a Carrinho (vazio)
+    -else
+      %li= link_to_cart
     %li
       %a{ href: piggybak_path } Checkout
 

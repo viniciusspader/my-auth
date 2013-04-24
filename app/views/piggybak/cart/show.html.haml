@@ -7,25 +7,9 @@
       = raw @cart.errors.join
 
   -if @cart.sellables.any?
-    .cart_items
-    = form_tag piggybak.cart_update_url do
-      %table.table.table-striped.table-hover
-        %tr.thead
-          %th#item_col Item
-          %th#qt_col Quantidade
-          %th#price_col Preco
-          %th#subtotal_col Subtotal
-          %th
-        - @cart.sellables.each do |item|
-          %tr.tbody
-            %td= item[:sellable].description
-            %td= number_field_tag "quantity[#{item[:sellable].id}]", item[:quantity]
-            %td= number_to_currency item[:sellable].price
-            %td= number_to_currency item[:sellable].price*item[:quantity]
-            %td= link_to 'Remover', piggybak.remove_item_url(item[:sellable].id,
-                                    method: :delete)
-        %tr.info{ style: 'font-weight: bold;' }
-          %td{ colspan: 2 }
-          %td Total
-          %td= number_to_currency @cart.total
-          %td
+    = render 'cart_table'
+  -else
+    %div
+      %p{ style: 'display: inline;' } Seu carrinho esta vazio, visite nossa
+      %a{ href: 'products', style: 'display: inline;' } loja
+      %p{ style: 'display: inline;' } .

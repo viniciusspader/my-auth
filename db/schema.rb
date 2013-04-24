@@ -109,6 +109,8 @@ ActiveRecord::Schema.define(:version => 20130418134621) do
     t.string   "name"
   end
 
+  add_index "products", ["id"], :name => "index_products_on_id", :unique => true
+
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
     t.string   "username"
