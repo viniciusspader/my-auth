@@ -23,5 +23,5 @@ production:
   encoding: unicode
   database: myauth
   pool: 5
-  username: spader.vinicius@gmail.com
-  password:
+  username: myauth
+  password: 

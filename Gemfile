@@ -2,10 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-gem 'sqlite3'
-
-
 group :test, :development do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
@@ -46,3 +44,5 @@ gem 'piggybak'
 group :production do
   gem 'pg'
 end
+
+gem 'activerecord-postgresql-adapter'
