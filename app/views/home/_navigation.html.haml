@@ -6,10 +6,15 @@
 %a.brand{ :href =>"#{ user_signed_in? ? user_path(current_user.id) : root_path}" } My-Auth
 .nav-collapse
 
+%ul.nav
+  %li
+    %a{ href: products_path } Loja
+  %li
+    %a{ href: '#' } Blog
+
 -if user_signed_in?
-  %ul.nav
-    %li
-      %a{ href: products_path } Loja
+
+  %ul.nav.pull-right
     -if cart_empty?
       %li
         %a Carrinho (vazio)
@@ -18,7 +23,6 @@
     %li
       %a{ href: piggybak_path } Checkout
 
-  %ul.nav.pull-right
     %li.dropdown
       %a.dropdown-toggle{ :href => '#', 'data-toggle' => 'dropdown' }
         %i.icon-wrench
@@ -35,11 +39,6 @@
                                                        :tabindex => '-1'
 
 -else
-  %ul.nav
-    %li
-      %a Seção 1
-    %li
-      %a Seção 2
 
   %ul.nav.pull-right
     %li
