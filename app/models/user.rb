@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :reset_password_token, :current_password, :roles_mask, :roles
+                  :reset_password_token, :current_password, :roles_mask, :roles,
+                  :cart_cookie
 
   attr_accessor :current_password
 
@@ -32,6 +33,13 @@ class User < ActiveRecord::Base
 
   def admin?
     roles.include?('admin')
+  end
+
+  def add_cart_cookie(value, password)
+    self.cart_cookie = value
+    self.password = password
+    self.password_confirmation = password
+    self.save
   end
 
   private
