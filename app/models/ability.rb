@@ -15,6 +15,7 @@ class Ability
     else
       alias_action :edit, :settings, :to => :modify
       can [:read, :update, :modify, :destroy], User, id: user.id
+      can :read, Post
     end
   end
 end

@@ -11,6 +11,7 @@ MyAuth::Application.routes.draw do
   resources :users
   resources :sessions
   resources :products
+  resources :posts
 
   match 'users/:id/settings' => 'users#settings'
 

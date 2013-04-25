@@ -1,0 +1,7 @@
+- if current_user.admin?
+  = render 'new'
+
+- Post.all.each do |post|
+  .content
+    %h1= post.title
+    %p= post.content

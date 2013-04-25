@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   acts_as_orderer
 
+  has_many :posts
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
