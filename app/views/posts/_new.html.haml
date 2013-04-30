@@ -10,7 +10,7 @@
     .control-group
       = f.label :content, class: 'control-label'
       .controls
-        = f.text_field :content, placeholder: 'Post'
+        = f.cktext_area :content
     .form
       .controls
         = f.submit "Postar", class: 'btn'

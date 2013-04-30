@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require ckeditor/init
 //= require_directory .
 
 // Prevent twitter bootstrap to close the dropdown

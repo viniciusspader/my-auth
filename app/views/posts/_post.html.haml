@@ -3,6 +3,6 @@
     %h1= post.title
     %p
       %small= "Criado a #{distance_of_time_in_words_to_now(post.created_at)}"
-    %p= post.content
+    %p= raw post.content
     %small.pull-right
       %a{ href: post_path(post) } continue lendo...

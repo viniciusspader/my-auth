@@ -48,3 +48,6 @@ gem 'piggybak'
 
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+
+gem 'ckeditor'
+gem 'paperclip'

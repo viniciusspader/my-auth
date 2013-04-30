@@ -1,5 +1,7 @@
 MyAuth::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   mount Piggybak::Engine => '/store', :as => 'piggybak'
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
