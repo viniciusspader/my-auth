@@ -1,4 +1,16 @@
-= form_for 'post', url: { action: 'create' } do |f|
-  = f.text_field :title
-  = f.text_field :content
-  = f.submit "Postar"
+.well
+  %h1 Post novo
+  = form_for 'post', url: { action: 'create' },
+                     html: { class: 'form-horizontal',
+                             id: 'new_post_form'}  do |f|
+    .control-group
+      = f.label :title, class: 'control-label'
+      .controls
+        = f.text_field :title, placeholder: 'Titulo'
+    .control-group
+      = f.label :content, class: 'control-label'
+      .controls
+        = f.text_field :content, placeholder: 'Post'
+    .form
+      .controls
+        = f.submit "Postar", class: 'btn'

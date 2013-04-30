@@ -1,7 +1,9 @@
-- if current_user.admin?
+- if current_user && current_user.admin?
   = render 'new'
 
-- Post.all.each do |post|
-  .content
-    %h1= post.title
-    %p= post.content
+%h1 Blog
+- @posts.each do |post|
+  = render post
+= will_paginate(@posts, previous_label: 'Mais novos',
+                        next_label: 'Mais antigos',
+                        class: 'pagination pagination-centered')

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.all
+    @posts = Post.paginate(page: params[:page]).per_page(5).order('created_at DESC')
 
     respond_to do |format|
       format.html
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html  { redirect_to(posts_path,
-                      :notice => 'Postagem publicada com sucesso!') }
+                      :notice => 'Post publicado com sucesso!') }
         format.json  { render :json => @post,
                       :status => :created, :location => @post }
       else
@@ -49,7 +49,15 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    @posts = Post.all
     @post.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(posts_path,
+                    notice: 'Post deletado!') }
+      format.json 
+    end
+
   end
 
 end

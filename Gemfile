@@ -45,3 +45,6 @@ gem 'normalize-rails'
 gem 'rails_admin'
 
 gem 'piggybak'
+
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
