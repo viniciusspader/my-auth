@@ -60,4 +60,19 @@ class PostsController < ApplicationController
 
   end
 
+  # feed inspired (not to say copied)
+  # from http://stackoverflow.com/questions/3951235/how-do-i-make-an-rss-atom-feed-in-rails-3?rq=1
+  # This other link is an alternative solution
+  # http://stackoverflow.com/questions/4827232/generating-rss-feed-in-rails-3
+  def feed
+    @posts = Post.all( select: 'title, content, id, created_at',
+                       order: 'created_at DESC',
+                       limit: 10 )
+
+    respond_to do |format|
+      format.html
+      format.rss { render layout: false }
+    end
+  end
+
 end

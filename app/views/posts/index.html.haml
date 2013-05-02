@@ -1,9 +1,20 @@
-- if current_user && current_user.admin?
-  = render 'new'
+.span12
+  %h1 Blog
+.container-fluid
+  .row-fluid
+    .span2
+      .well
+        %ul{ style: 'list-style: none;' }
+          %li
+            %a{ href: 'posts#feed' } RSS
+    .span8
+      - if current_user && current_user.admin?
+        = render 'new'
 
-%h1 Blog
-- @posts.each do |post|
-  = render post
-= will_paginate(@posts, previous_label: 'Mais novos',
-                        next_label: 'Mais antigos',
-                        class: 'pagination pagination-centered')
+      - @posts.each do |post|
+        = render post
+      = will_paginate(@posts, previous_label: 'Mais novos',
+                              next_label: 'Mais antigos',
+                              class: 'pagination pagination-centered')
+    .span2
+      .well
